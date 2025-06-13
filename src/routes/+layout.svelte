@@ -5,9 +5,15 @@
 
 <svelte:head>
   <!-- favicon lives in your `static/` folder -->
+  <link rel="icon" href="{base}/favicon.png" />
 </svelte:head>
 
-  <link rel="icon" href="{base}/favicon.png" />
-
+{@html `
+  <script 
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"950e2fe0c7e64a23b943112b4c16d1b9"}'>
+  </script>
+`}
 
 <slot />
