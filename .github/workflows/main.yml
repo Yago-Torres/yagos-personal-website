@@ -39,5 +39,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}     # see notes below
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: personal-website                     # your Pages project name
+          projectName: yagos-personal-web                     # your Pages project name
           directory: .svelte-kit/cloudflare                 # your build output dir
