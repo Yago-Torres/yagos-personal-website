@@ -19,19 +19,18 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter(),
 		csp: {
-    mode: 'auto',
-    directives: {
-      'default-src': ["'self'"],
-      'script-src': [
-        "'self'",
-        'https://static.cloudflareinsights.com'
-      ],
-      'connect-src': [
-        "'self'",
-        'https://static.cloudflareinsights.com'
-      ],
-      // …the rest of your directives…
-    }
+    		mode: 'auto',
+			directives: {
+        // you don't need to repeat 'self' or nonce-values here —
+        // SvelteKit will automatically merge them in.
+        'script-src': [
+          'https://static.cloudflareinsights.com'
+        ],
+        'connect-src': [
+          'https://static.cloudflareinsights.com'
+        ]
+        // you can add other external origins here as needed
+      }
   }
 }
 };
