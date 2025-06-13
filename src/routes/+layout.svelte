@@ -1,12 +1,11 @@
-import { base } from '$app/paths';
-
 <script lang="ts">
-    import { base } from '$app/paths';
-	import '../app.css';
-	
-	let { children } = $props();
+  import { base } from '$app/paths';
+  import '../app.css';
 </script>
 
-<link rel="icon" href={base+'/favicon.ico'} />
+<svelte:head>
+  <!-- favicon lives in your `static/` folder -->
+  <link rel="icon" href="{base}/favicon.ico" />
+</svelte:head>
 
-{@render children()}
+<slot />
