@@ -7,7 +7,7 @@
   <!-- favicon lives in your `static/` folder -->
 </svelte:head>
 
-  <link rel="icon" href="{base}/favicon.ico" />
+  <link rel="icon" href="{base}/favicon.png" />
 
 
 <slot />
