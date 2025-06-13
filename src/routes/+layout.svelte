@@ -14,7 +14,6 @@
     data-cf-beacon={JSON.stringify({
       token: '950e2fe0c7e64a23b943112b4c16d1b9'
     })}
-    crossorigin="anonymous"
   	></script>
 </svelte:head>
 
