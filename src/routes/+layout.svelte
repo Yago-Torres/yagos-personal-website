@@ -7,7 +7,6 @@
   <!-- favicon lives in your `static/` folder -->
   <link rel="icon" href={base + '/favicon.png'} />
 
-  <!-- Cloudflare Web Analytics beacon -->
   
 </svelte:head>
 
