@@ -1,16 +1,28 @@
-<script>
+<script lang="ts">
   import { Canvas } from '@threlte/core';
   import Scene from '$lib/Scene.svelte';
 </script>
 
+<style>
+  :global(html, body) {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .canvas-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
 
-
-
-<h1>Welcome to SvelteKit, Yago was here</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-
-
-
-<Canvas>
-  <Scene />
-</Canvas>
+<div class="canvas-fullscreen">
+  
+  <Canvas shadows>
+    <Scene />
+  </Canvas>
+</div>
