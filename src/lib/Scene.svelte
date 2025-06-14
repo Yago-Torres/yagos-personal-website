@@ -1,8 +1,58 @@
 <script>
-  import { T } from '@threlte/core'
+  import { T, useTask } from '@threlte/core'
+  import { interactivity } from '@threlte/extras'
+  import { Spring } from 'svelte/motion'
+    import { MTLLoader, OBJLoader } from 'three-stdlib';
+  import shader from '$lib/utils/shaders.glsl?raw'
+
+  interactivity()
+
+  const scale = new Spring(1)
+
+  let rotation = 0
+  useTask((delta) => {
+    rotation += delta
+  })
 </script>
 
-<T.Mesh>
-  <T.BoxGeometry />
-  <T.MeshBasicMaterial />
+<T.PerspectiveCamera
+  makeDefault
+  position={[10, 10, 10]}
+  oncreate={(ref) => {
+    ref.lookAt(0, 1, 0)
+  }}
+/>
+
+<T.DirectionalLight
+  position={[0, 10, 10]}
+  castShadow
+/>
+
+<T.Mesh
+  rotation.y={rotation}
+  position.y={1}
+  scale={scale.current}
+  onpointerenter={() => {
+    scale.target = 1.5
+  }}
+  onpointerleave={() => {
+    scale.target = 1
+  }}
+  castShadow
+>
+<T.ShaderMaterial
+		{shader}
+		
+	></T.ShaderMaterial>
+
+  <T.BoxGeometry args={[1, 2, 1]} />
+  <T.MeshStandardMaterial color="hotpink" />
+</T.Mesh>
+delta
+<T.Mesh
+  rotation.x={-Math.PI / 2}
+  receiveShadow
+>
+  <T.CircleGeometry args={[4, 40]} />
+  <T.MeshStandardMaterial color="white" />
 </T.Mesh>

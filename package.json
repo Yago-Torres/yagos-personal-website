@@ -28,6 +28,8 @@
 	},
 	"dependencies": {
 		"@threlte/core": "^8.0.4",
-		"three": "^0.177.0"
+		"@threlte/extras": "^9.2.1",
+		"three": "^0.177.0",
+		"three-stdlib": "^2.36.0"
 	}
 }
